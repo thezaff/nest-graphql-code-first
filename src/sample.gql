@@ -1,0 +1,46 @@
+# Sample queries and mutations
+
+mutation {
+  create(input: { name: "catstein", age: 23, description: "abc" }) {
+    id
+    name
+    age
+    description
+  }
+}
+
+mutation {
+  update(
+    id: "5fab9baf4f44c817fbf4569a"
+    input: { name: "catasdfadsfsteiaaaaaaan", age: 23, description: "abc" }
+  ) {
+    id
+    name
+    age
+    description
+  }
+}
+
+query {
+  findAll {
+    id
+    name
+    age
+    description
+  }
+}
+
+query {
+  findOne(id: "5fab9baf4f44c817fbf4569a") {
+    id
+    name
+    age
+    description
+  }
+}
+
+mutation {
+  remove(id: "5fab9baf4f44c817fbf4569a") {
+    name
+  }
+}

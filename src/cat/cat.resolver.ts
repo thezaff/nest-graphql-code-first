@@ -19,17 +19,20 @@ export class CatResolver {
   }
 
   @Mutation(returns => Cat)
-  create(@Args('input') input: CatInput): Promise<Cat> {
+  create(@Args('input') input: CatInput): Promise<CatDto> {
     return this.catService.create(input);
   }
 
   @Mutation(returns => Cat)
-  update(@Args('id') id: string, @Args('input') input: CatInput): Promise<Cat> {
+  update(
+    @Args('id') id: string,
+    @Args('input') input: CatInput,
+  ): Promise<CatDto> {
     return this.catService.update(id, input);
   }
 
   @Mutation(returns => Cat)
-  remove(@Args('id') id: string): Promise<Cat> {
+  remove(@Args('id') id: string): Promise<CatDto> {
     return this.catService.delete(id);
   }
 }
