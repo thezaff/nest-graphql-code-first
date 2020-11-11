@@ -1,0 +1,28 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  findOne(id: String!): Cat!
+  findAll: [Cat!]!
+}
+
+type Cat {
+  id: ID
+  name: String!
+  age: Int!
+  description: String
+}
+
+type Mutation {
+  create(input: CatInput!): Cat!
+  update(input: CatInput!, id: String!): Cat!
+  remove(id: String!): Cat!
+}
+
+input CatInput {
+  id: ID
+  name: String!
+  age: Int!
+  description: String
+}
